@@ -8,9 +8,15 @@ spec:
   serviceAccountName: {{ if .Values.rbac.create }}aggregator{{ else }}"{{ .Values.rbac.serviceAccountName }}"{{ end }}
   containers:
   - name: aggregator
-    image: endianogino/aggregator:{{ .Values.images.aggregatorVersion }}
+    image: {{ .Values.images.name }}:{{ .Values.images.aggregatorVersion }}
     imagePullPolicy: {{ .Values.imagePullPolicy }}
+    env:
+      - name: DISABLE_HTTP2
+        value: "true"
     args:
-    - -max-replicas={{ .Values.aggregator.maxReplicas }}
-    - -logtostderr
-    - -v={{ .Values.aggregator.logLevel }}
+      - -max-replicas={{ .Values.aggregator.maxReplicas }}
+      - -logtostderr
+      - -v={{ .Values.aggregator.logLevel }}
+      - -interval={{ .Values.aggregator.interval }}
+      - -loadbots-port=18080
+      - -sleep={{ .Values.aggregator.sleep }}

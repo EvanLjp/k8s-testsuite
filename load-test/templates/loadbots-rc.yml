@@ -14,11 +14,11 @@ spec:
     spec:
       containers:
       - name: loadbots
-        image: endianogino/vegeta-server:{{ .Values.images.loadbotVersion }}
+        image: {{ .Values.images.name }}:{{ .Values.images.loadbotVersion }}
         imagePullPolicy: {{ .Values.imagePullPolicy }}
         args:
         - -host=webserver
-        - -address=:8080
+        - -address=:18080
         - -rate={{ .Values.loadbot.rate }}
         - -workers={{ .Values.loadbot.workers}}
         - -duration={{ .Values.loadbot.duration}}

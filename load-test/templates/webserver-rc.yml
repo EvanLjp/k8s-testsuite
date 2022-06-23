@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: webserver
-        image: endianogino/simple-webserver:{{ .Values.images.webserverVersion }}
+        image: {{ .Values.images.name }}:{{ .Values.images.webserverVersion }}
         imagePullPolicy: {{ .Values.imagePullPolicy }}
         args:
         - -port=80

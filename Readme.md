@@ -1,24 +1,27 @@
 ## Test suite for Kubernetes
+The repo is forked from `https://github.com/mrahbar/k8s-testsuite.git` for `https://github.com/alibaba/ilogtail` load test. 
 
 This test suite consists of two Helm charts for network bandwith testing and load testing a Kuberntes cluster.
 The structure of the included charts looks a follows:
 ````
 k8s-testsuite/
-- load-test/
-|____Chart.yaml
-|____values.yaml
-|____.helmignore
-|____templates/
-- network-test/
-|____Chart.yaml
-|____values.yaml
-|____.helmignore
-|____templates/
+.
+├── aggregator
+├── client
+├── load-test
+│   ├── Chart.yaml
+│   ├── templates
+│   └── values.yaml
+├── network-test
+│   ├── Chart.yaml
+│   ├── templates
+│   └── values.yaml
+└── webserver
 ```` 
 
 You can install a test by running:
 ```` 
-> git clone https://github.com/mrahbar/k8s-testsuite.git
+> git clone https://github.com/evanljp/k8s-testsuite.git
 > cd k8s-testsuite
 > helm install --namespace load-test ./load-test
 > helm install --namespace network-test ./network-test
