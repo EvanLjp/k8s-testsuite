@@ -29,3 +29,6 @@ spec:
         resources:
           requests:
             cpu: {{ .Values.cpuRequests.loadbot }}
+            # 调度策略，看需求开启
+#      nodeSelector:
+#        kubernetes.io/hostname: cn-beijing.172.16.0.69

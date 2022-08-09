@@ -16,10 +16,19 @@ rbac:
 aggregator:
   maxReplicas: 100
   logLevel: 2
-  interval: 5m
-  sleep: 10s
+  # 不同测试场景直接间隔
+  interval: 30s
+  # 多少秒后启动流量
+  sleep: 30s
 
 loadbot:
-  rate: 10000
+# QPS
+# 5W
+#  rate: 1250
+# 10W
+#  rate: 2500
+# 20W
+  rate: 5000
   workers: 10
-  duration: 20s
+  # 压测时间
+  duration: 300s

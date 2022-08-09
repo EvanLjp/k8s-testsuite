@@ -4,7 +4,7 @@ go 1.17
 
 require (
 	github.com/golang/glog v0.0.0-20160126235308-23def4e6c14b
-	github.com/tsenart/vegeta v0.0.0-20170319134708-9f28db162ce1
+	github.com/tsenart/vegeta v12.7.0+incompatible
 	k8s.io/apimachinery v0.0.0-20170829124539-8ab5f3d8a330
 	k8s.io/client-go v0.0.0-20170728135302-d92e8497f71b
 )
@@ -13,7 +13,9 @@ require (
 	github.com/PuerkitoBio/purell v1.1.0 // indirect
 	github.com/PuerkitoBio/urlesc v0.0.0-20170810143723-de5bf2ad4578 // indirect
 	github.com/asaskevich/govalidator v0.0.0-20170903095215-73945b6115bf // indirect
+	github.com/bmizerany/perks v0.0.0-20141205001514-d9a9656a3a4b // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
+	github.com/dgryski/go-gk v0.0.0-20200319235926-a69029f61654 // indirect
 	github.com/docker/distribution v0.0.0-20170720211245-48294d928ced // indirect
 	github.com/emicklei/go-restful v0.0.0-20170921190803-5741799b275a // indirect
 	github.com/emicklei/go-restful-swagger12 v0.0.0-20170208215640-dcef7f557305 // indirect
@@ -30,13 +32,14 @@ require (
 	github.com/google/gofuzz v0.0.0-20170612174753-24818f796faf // indirect
 	github.com/howeyc/gopass v0.0.0-20170109162249-bf9dde6d0d2c // indirect
 	github.com/imdario/mergo v0.0.0-20160216103600-3e95a51e0639 // indirect
+	github.com/influxdata/tdigest v0.0.1 // indirect
 	github.com/juju/ratelimit v0.0.0-20170523012141-5b9ff8664717 // indirect
 	github.com/mailru/easyjson v0.0.0-20170902151237-2a92e673c9a6 // indirect
 	github.com/mitchellh/mapstructure v0.0.0-20170523030023-d0303fe80992 // indirect
 	github.com/pborman/uuid v1.2.1 // indirect
 	github.com/spf13/pflag v1.0.0 // indirect
 	github.com/stevvooe/resumable v0.0.0-20180830230917-22b14a53ba50 // indirect
-	github.com/streadway/quantile v0.0.0-20150917103942-b0c588724d25 // indirect
+	github.com/streadway/quantile v0.0.0-20220407130108-4246515d968d // indirect
 	github.com/stretchr/testify v1.7.4 // indirect
 	github.com/ugorji/go v0.0.0-20170107133203-ded73eae5db7 // indirect
 	golang.org/x/crypto v0.0.0-20170930174604-9419663f5a44 // indirect

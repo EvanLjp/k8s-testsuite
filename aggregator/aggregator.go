@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"flag"
 	"fmt"
+	vegeta "github.com/tsenart/vegeta/lib"
 	"io/ioutil"
 	"net/http"
 	"sync"
@@ -17,7 +18,6 @@ import (
 
 	"errors"
 	"github.com/golang/glog"
-	"github.com/tsenart/vegeta/lib"
 	"os"
 	"os/signal"
 	"path/filepath"
@@ -38,19 +38,9 @@ type resultEntry struct {
 
 var scenarios = []replicas{
 	{
-		title:     "10 X",
-		loadbots:  10,
-		webserver: 10,
-	},
-	{
 		title:     "20 X",
 		loadbots:  20,
 		webserver: 20,
-	},
-	{
-		title:     "40 X",
-		loadbots:  40,
-		webserver: 40,
 	},
 }
 
@@ -99,8 +89,8 @@ func main() {
 	glog.Infof("Running scale test with max replicas %d", *maxReplicas)
 	runScaleTest()
 	showSummary()
-	scaleReplicationController(scaleTestNamespace, loadbotsName, 0)
-	scaleReplicationController(scaleTestNamespace, webserverName, 0)
+	//scaleReplicationController(scaleTestNamespace, loadbotsName, 0)
+	//scaleReplicationController(scaleTestNamespace, webserverName, 0)
 
 	glog.Info("Aggregator finished work")
 	exitSignal := make(chan os.Signal)
